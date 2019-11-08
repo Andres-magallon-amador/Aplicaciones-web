@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp|Rye&display=swap" rel="stylesheet"> 
+<style>
+    body {background-color: black;}
+    #wrapper {position:relative; /*el wrapper se mueve para centrarse al ajustarse la pantalla*/
+        background-image:url("imagenes/screen-2.jpg");
+        width: 1280px; 
+        height: 900px;
+        margin:auto;
+        box-shadow:rgb(45, 61, 51) 10px 10px 100px,
+    rgb(45, 61, 51) -10px -10px 100px,
+    rgb(45, 61, 51) -10px 10px 100px,
+    rgb(45, 61, 51) 10px -10px 100px;}
+        h1 {position:absolute; /*lo que va dentro del h1 se mueve con el*/
+            left: 80px;
+            color: rgb(175, 60, 42);
+            font-size: 200%;
+            font-family: 'Rye', cursive;
+            }
+
+        #p1 {position:absolute;
+        left:360px;
+        top:270px;
+        font-size: 140%;
+        color: black;
+        color: rgb(175, 60, 42);
+        font-family: 'MedievalSharp', cursive;}
+
+
+         #bonfire {position:absolute;
+                    top: 330px;
+                    left:500px;
+                    width:150px;
+                    height:370px;
+                   /* border:1px solid white*/;
+                    }
+
+        #knight {position:absolute;
+                    top: 430px;
+                    left: 185px;
+                    width: 300px;
+                    height: 300px;
+                   /* border:1px solid white;*/
+                    }
+
+        #saliente {position:absolute;
+                    top: 180px;
+                    left: 700px;
+                    width: 200px;
+                    height: 200px;
+                   /* border: 5px solid white*/}
+
+
+             #mimico {position: absolute;
+                    top:530px;
+                    left:680px;
+                    visibility:hidden;}
+
+
+            #perrete {position: absolute;
+                    top:550px;
+                    left:0px;
+                    visibility: hidden;}
+
+            #soldado {position: absolute;
+                    top:150px;
+                    left:700px;
+                    visibility: hidden;}
+
+</style>
+<script>
+    function mostrar(id) {
+            document.getElementById(id).style.visibility="visible";
+    }
+    function ocultar(id) {
+            document.getElementById(id).style.visibility="hidden";
+    }
+    function sonar(id) {
+            document.getElementById(id).play();
+    }
+    function parar(id) {
+            document.getElementById(id).pause();
+    }
+</script>
+
+
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Welcome Stranger...</h1>
+
+      <p id="p1">Don´t touch the bonfire. Stranger... </p>
+
+      <div id="bonfire" onclick="mostrar('mimico');sonar('prueba')">
+                        </div>
+
+    <p id="p2">i told you boy...come on lets click on me to call a friend</p>
+
+      <div id="knight" onclick="mostrar('perrete')">
+                        </div>
+
+    
+    <div id="saliente" onclick="mostrar('soldado')">
+                        </div>
+
+      <img id="mimico"onclick="ocultar('mimico');parar('prueba')"src="imagenes/mimico.gif" height=20%>
+
+      <img id="perrete"onclick="ocultar('perrete')"src="imagenes/perro.gif" height=20%>
+
+        <img id="soldado"onclick="ocultar('soldado')"src="imagenes/caballero.gif" height=20%>   
+   
+
+</div>
+
+    <audio id="prueba">
+        <source src="sonidos/sonido1.mp3" type="audio/mpeg">
+
+    </audio>
+</body>
+</html>
